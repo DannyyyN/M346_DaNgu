@@ -20,3 +20,29 @@ disable_root: Ein boolscher Wert, der bestimmt, ob der Root-Zugriff über SSH de
 ## B)
 ![Image](B1.png)
 ![Image](B2.png)
+
+## C)
+
+Die Verbindung zum Port 80 ist fehlgeschlagen. Der apache2 Dienst wurde nicht gestartet oder ist nicht installiert.
+
+Mit dem Befehl `apache2 -v` kann man überprüfen, ob es installiert ist, was in unserem Fall nicht der Fall ist.
+
+apache installieren: `sudo apt-get install apache2`
+
+Den Status kann man mit folgendem Befehl abfragen:
+`sudo systemctl status apache2`
+
+Starten tut man mit folgendem Befehl:
+`sudo systemctl start apache2`
+
+Neustarten tut man mit folgendem Befehl:
+`sudo systemctl restart apache2`
+
+Nun können die Seiten wie gewohnt aufgerufen werden.
+
+![Image](C1.png)
+![Image](C2.png)
+
+Adminer
+
+![Image](C3.png)
