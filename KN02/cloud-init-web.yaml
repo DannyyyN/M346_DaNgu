@@ -16,7 +16,9 @@ packages:
   - php 
   - libapache2-mod-php 
   - php-mysqli
-
+runcmd:
+  - sudo apt-get install adminer
+  - sudo systemctl restart apache2
 write_files:
   - content: |
       <?php
