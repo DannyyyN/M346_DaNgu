@@ -24,7 +24,7 @@ runcmd:
 write_files:
   - content: |
       <?php
-        $servername = "127.0.0.1";
+        $servername = "184.72.131.32";
         $username = "admin";
         $password = "password";
         $dbname = "mysql";
