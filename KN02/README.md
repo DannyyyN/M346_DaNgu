@@ -41,6 +41,9 @@ Neustarten tut man mit folgendem Befehl:
 Nun können die Seiten wie gewohnt aufgerufen werden.
 
 ![Image](C1.png)
+
+Geht nicht, da mit Windows 10 Home keine IP für die Verbindung vorhanden ist.
+
 ![Image](C2.png)
 
 Adminer
