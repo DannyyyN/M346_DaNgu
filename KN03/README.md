@@ -29,3 +29,30 @@ Hier sieht man die Objekte, die auf dem Bucket hochgeladen wurden und auf der Se
 
 Hier sieht man die Einstellung, womit es möglich ist die Webseite öffentlich aufzurufen.
 ![Image](b04.png)
+
+## B)
+
+Verbindung, wenn es `true` gesetzt ist:
+![Image](B1.png)
+
+Verbindung, wenn es `false` gesetzt ist:
+![Image](B2.png)
+
+## C)
+
+Verbindung mit Danny-1:
+![Image](C1.png)
+
+Verbindung mit Danny-2:
+![Image](C2.png)
+
+## D)
+
+Cloud-init config:
+![image](D1.png)
+
+Verbindung mit Danny-1:
+![Image](D2.png)
+
+Verbindung mit Danny-2:
+![Image](D3.png)
