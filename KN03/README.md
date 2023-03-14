@@ -32,11 +32,20 @@ Hier sieht man die Einstellung, womit es möglich ist die Webseite öffentlich a
 
 ## B)
 
-Verbindung, wenn es `true` gesetzt ist:
+### ssh_pwauth = true
+ubuntu:
 ![Image](B1.png)
 
-Verbindung, wenn es `false` gesetzt ist:
+tbz
 ![Image](B2.png)
+
+### ssh_pwauth = false
+
+ubuntu:
+![Image](B3.png)
+
+tbz
+![Image](B4.png)
 
 ## C)
 
