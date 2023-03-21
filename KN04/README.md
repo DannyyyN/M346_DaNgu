@@ -17,12 +17,10 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     home: /home/ubuntu
-    shell: /bin/bash
-    lock_passwd: false
-    plain_text_passwd: 'password'        
+    shell: /bin/bash     
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
-ssh_pwauth: true
+ssh_pwauth: false
 disable_root: false 
 packages:
   - adminer
@@ -78,12 +76,10 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     home: /home/ubuntu
-    shell: /bin/bash
-    lock_passwd: false
-    plain_text_passwd: 'password'    
+    shell: /bin/bash  
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
-ssh_pwauth: true
+ssh_pwauth: false
 disable_root: false
 packages:
   - mariadb-server
@@ -115,7 +111,13 @@ adminer nach dem einloggen:
 S3 ist ein Objektspeichermodell. Objektspeicher sind ein Speichermodell, bei dem Daten als Objekte behandelt und in einem flachen Adressraum organisiert werden, im Gegensatz zu traditionellen Dateisystemen, die hierarchische Verzeichnisstrukturen verwenden.
 ### b)
 
+Vor der Löschung:
 ![Image](B1.png)
+Nach der Löschung:
 ![Image](B2.png)
+
+4. Die Bestätigungsmeldung erklärt, dass das Root-Volume der Instanz gelöscht wird und alle Daten darauf unwiederruflich verloren gehen. Es wird empfohlen, eine Sicherungskopie des Root-Volumes zu erstellen, bevor die Instanz gelöscht wird.
+
+5. Das zusätzliche Volume existiert auch nach dem Löschen der Instanz, da es nicht automatisch gelöscht wird. Auf diese Weise kann man die Daten auf dem separaten Volume beibehalten und sie später einer neuen Instanz zuordnen.
 
 Wenn eine Instanz aufgrund von Fehlern oder Problemen unbrauchbar geworden ist, aber wichtige Daten auf dem Volume gespeichert sind. In diesem Fall könnte man eine neue Instanz starten und das vorhandene Volume wieder anhängen, um auf die Daten zuzugreifen.
