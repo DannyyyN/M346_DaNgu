@@ -1,13 +1,45 @@
-# KN04
+# KN05
 
 ## A)
 
-#### Instanz-Erstellung:
-Instanz Typ:
+### Leere Bereiche:
+Instanzen
 ![Image](1.png)
 
-Speicher:
+Network Interfaces
 ![Image](2.png)
+
+Security Groups
+![Image](3.png)
+
+VPC
+![Image](4.png)
+
+## B)
+
+### Subnetz
+Neues Subnetz erstellen
+![Image](5.png)
+Enable auto-assign public PV44 address für öffentliche IP
+![Image](6.png)
+Subnetz Liste:
+![Image](14.png)
+
+Elastic IPs
+![Image](8.png)
+
+Security Groups
+![Image](7.png)
+Im Nachhinein wurde nochmal HTTP hinzugefügt, damit die Seite aufgerufen werden kann.
+![Image](13.png)
+
+### Netzwerk-Interfaces
+Liste
+![Image](15.png)
+DB Details:
+![Image](19.png)
+Web Details:
+![Image](20.png)
 
 Feld "user data" (cloud-init web):
 ```
@@ -17,11 +49,11 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     home: /home/ubuntu
-    shell: /bin/bash     
+    shell: /bin/bash
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
-ssh_pwauth: false
-disable_root: false 
+ssh_pwauth: true
+disable_root: false
 packages:
   - adminer
   - apache2 
@@ -37,7 +69,7 @@ runcmd:
 write_files:
   - content: |
       <?php
-        $servername = "34.200.230.213";
+        $servername = "172.31.10.175";
         $username = "admin";
         $password = "password";
         $dbname = "mysql";
@@ -76,10 +108,12 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     home: /home/ubuntu
-    shell: /bin/bash  
+    shell: /bin/bash
+    lock_passwd: false
+    plain_text_passwd: 'password'    
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
-ssh_pwauth: false
+ssh_pwauth: true
 disable_root: false
 packages:
   - mariadb-server
@@ -87,37 +121,21 @@ runcmd:
   - sudo mysql -sfu root -e "GRANT ALL ON *.* TO 'admin'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;"
   - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
   - sudo systemctl restart mariadb.service
+ethernets:
+ens3:
+dhcp4: false
+addresses:
+- 172.31.10.10/24
 ```
 
-Hier sieht man die zwei Instanzen:
-![Image](9.png)
+Einstellungen Network settings
+![Image](16.png)
+![Image](17.png)
+
+Webseiten
 ![Image](10.png)
+![Image](11.png)
+![Image](12.png)
 
-index.html:
-![Image](5.png)
-
-info.php:
-![Image](6.png)
-
-db.php:
-![Image](7.png)
-
-adminer nach dem einloggen:
-![Image](8.png)
-
-## B)
-
-### a)
-S3 ist ein Objektspeichermodell. Objektspeicher sind ein Speichermodell, bei dem Daten als Objekte behandelt und in einem flachen Adressraum organisiert werden, im Gegensatz zu traditionellen Dateisystemen, die hierarchische Verzeichnisstrukturen verwenden.
-### b)
-
-Vor der Löschung:
-![Image](B1.png)
-Nach der Löschung:
-![Image](B2.png)
-
-4. Die Bestätigungsmeldung erklärt, dass das Root-Volume der Instanz gelöscht wird und alle Daten darauf unwiederruflich verloren gehen. Es wird empfohlen, eine Sicherungskopie des Root-Volumes zu erstellen, bevor die Instanz gelöscht wird.
-
-5. Das zusätzliche Volume existiert auch nach dem Löschen der Instanz, da es nicht automatisch gelöscht wird. Auf diese Weise kann man die Daten auf dem separaten Volume beibehalten und sie später einer neuen Instanz zuordnen.
-
-Wenn eine Instanz aufgrund von Fehlern oder Problemen unbrauchbar geworden ist, aber wichtige Daten auf dem Volume gespeichert sind. In diesem Fall könnte man eine neue Instanz starten und das vorhandene Volume wieder anhängen, um auf die Daten zuzugreifen.
+KN05_web Instanz Details
+![Image](18.png)
