@@ -29,7 +29,10 @@ Elastic IPs
 ![Image](8.png)
 
 Security Groups
-![Image](7.png)
+KN05_db:
+![Image](B3.png)
+KN05_web:
+![Image](B4.png)
 Im Nachhinein wurde nochmal HTTP hinzugefügt, damit die Seite aufgerufen werden kann.
 ![Image](13.png)
 
@@ -128,14 +131,16 @@ addresses:
 - 172.31.10.10/24
 ```
 
+KN05_web Instanz Details
+![Image](B5.png)
+KN05_db Instanz Details
+![Image](B6.png)
+
 Einstellungen Network settings
-![Image](16.png)
-![Image](17.png)
+![Image](B1.png)
+![Image](B2.png)
 
 Webseiten
 ![Image](10.png)
 ![Image](11.png)
 ![Image](12.png)
-
-KN05_web Instanz Details
-![Image](18.png)
