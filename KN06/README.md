@@ -37,7 +37,7 @@ Health-Check
 ![Image](C6.png)
 
 
-## C)
+## D)
 <ul>
 <li>Launch Template wie eine Web-Instanz
 </ul>
