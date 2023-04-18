@@ -26,6 +26,9 @@ Instanz-Typ
 <li>Neues Network-Interface erstellen
 </ul>
 
+Health-Check
+![Image](C7.png)
+
 ![Image](C1.png)
 ![Image](C2.png)
 ![Image](C3.png)
@@ -33,10 +36,14 @@ Instanz-Typ
 ![Image](C5.png)
 ![Image](C6.png)
 
+
 ## C)
 <ul>
 <li>Launch Template wie eine Web-Instanz
 </ul>
+
+Health-Check
+![Image](C7.png)
 
 ![Image](D1.png)
 ![Image](D2.png)
