@@ -11,6 +11,20 @@ AWS:
 Azure:
 ![Image](A3.png)
 
+
+Wieso AWS besser als Azure ist:
+<ul>
+
+<li>Breitere Auswahl an Services: AWS bietet eine breitere Palette an Diensten und Optionen als Azure, was es einfacher macht, die spezifischen Bedürfnisse Ihres Unternehmens zu erfüllen.
+
+<li>Größere Community: AWS hat eine größere Nutzergemeinschaft als Azure, was bedeutet, dass es mehr Ressourcen und Support verfügbar gibt, um Probleme zu lösen und Wissen zu teilen.
+
+<li>Bessere Skalierbarkeit: AWS hat eine bessere Skalierbarkeit und Flexibilität, was es einfacher macht, das System zu erweitern und zusätzliche Ressourcen hinzuzufügen.
+
+<li>Höhere Zuverlässigkeit: AWS verfügt über mehrere Verfügbarkeitszonen und Regionen, die eine höhere Zuverlässigkeit und eine bessere Disaster Recovery-Fähigkeit bieten.
+
+</ul>
+
 ### 2) Replatforming
 
 ![Image](B1.png)
